@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST: App 2 Should make match with the snapshot 1`] = `
+<div>
+  <h1
+    data-testid="test-title"
+  >
+    Dark Souls II
+  </h1>
+  <h2
+    data-testid="test-subtitle"
+  />
+</div>
+`;

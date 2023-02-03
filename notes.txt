@@ -1,0 +1,83 @@
+TEST STEPS (With Vite)
+
+- 1) Install dependencies:
+
+    Jest (For testing logic and algorithms)
+
+        npm install --save-dev jest
+        npm install --save-dev @types/jest
+        npm install --save-dev jest-environment-jsdom
+
+    Babel
+
+        npm install --save-dev babel-jest 
+        npm install --save-dev @babel/core
+        npm install --save-dev @babel/preset-env
+        npm install --save-dev @babel/preset-react
+
+    Isomorphic (For testing fecht functions)
+
+        npm install --save-dev isomorphic-fetch
+
+    Library (For testing React components)
+
+        npm install --save-dev @testing-library/react
+
+
+
+    OR (All in one)
+
+        npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react 
+        npm install --save-dev @testing-library/react @types/jest jest-environment-jsdom
+
+
+
+
+
+- 2) Add this to package.json: 
+
+    "scripts": {
+        "test": "jest --watchAll"
+    }
+
+
+
+
+
+- 3) Create file "babel.config.json" in root project and add: 
+    
+    {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "esmodules": true
+                    }
+                }
+            ],
+            [
+                "@babel/preset-react",
+                {
+                    "runtime": "automatic"
+                }
+            ]
+        ]
+    }
+
+
+
+
+- 4) Create file "jest.config.cjs" in root project and add:
+
+    module.exports = {
+        testEnvironment: 'jest-environment-jsdom',
+        setupFiles: ['./jest.setup.js'],
+    };
+
+
+
+
+- 5) Create file "jest.setup.js" in root project and add:
+
+    import 'isomorphic-fetch';
