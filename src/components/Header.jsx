@@ -1,4 +1,6 @@
+// Assets
 import reactLogo from '../assets/react.svg';
+// Styles
 import '../App.css';
 
 const Header = () => {
