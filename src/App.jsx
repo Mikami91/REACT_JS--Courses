@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // Components
-import { InputSearch, Header } from './components/index.js';
+import { InputSearch, Header } from './components';
 // Styles
 import './App.css';
 import GifGrid from './components/GifGrid';
