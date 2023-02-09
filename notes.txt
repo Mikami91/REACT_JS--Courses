@@ -83,7 +83,24 @@ TEST STEPS (With Vite)
           moduleNameMapper: {
             '\\.(css)$': 'identity-obj-proxy',
             '\\.(jpg|jpeg|png|gif)$': 'identity-obj-proxy',
+            '^.+\\.svg$': '<rootDir>/svgTransform.js',
           },
+    };
+    
+    
+    
+ -5) Create file "svgTransform,js" in root project and add (For svg imports):
+ 
+    module.exports = {
+      process() {
+        return {
+          code: `module.exports = {};`,
+        };
+      },
+      getCacheKey() {
+        // The output is always the same.
+        return 'svgTransform';
+      },
     };
 
 
