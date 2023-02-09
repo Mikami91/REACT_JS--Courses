@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 // Components
 import GifItem from './GifItem';
 // Hooks
 import { useFetchGifs } from '../hooks/useFetchGifs';
 // Assets
-import loadinGif from '../assets/loading.gif';
+import loadingLogo from '../assets/loading.svg';
 
 const GifGrid = ({ category }) => {
   const { gifs, isLoading } = useFetchGifs(category);
@@ -12,7 +13,7 @@ const GifGrid = ({ category }) => {
     <>
       <h2>{category}</h2>
 
-      {isLoading && <img src={loadinGif} alt='loading' />}
+      {isLoading && <img src={loadingLogo} alt='loading' className='img' />}
 
       <div className='card'>
         {gifs.map((gif) => (
@@ -21,6 +22,10 @@ const GifGrid = ({ category }) => {
       </div>
     </>
   );
+};
+
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired,
 };
 
 export default GifGrid;

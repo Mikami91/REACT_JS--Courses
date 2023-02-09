@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const InputSearch = ({ onAddCategory }) => {
   const [value, setValue] = useState('');
@@ -12,13 +13,12 @@ const InputSearch = ({ onAddCategory }) => {
 
     if (value.trim().length < 1) return;
 
-    // setCategories((categories) => [...categories, value]);
     onAddCategory(value.trim());
     setValue('');
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label='form'>
       <input
         type='text'
         placeholder='Search gif'
@@ -27,6 +27,10 @@ const InputSearch = ({ onAddCategory }) => {
       />
     </form>
   );
+};
+
+InputSearch.propTypes = {
+  onAddCategory: PropTypes.func.isRequired,
 };
 
 export default InputSearch;

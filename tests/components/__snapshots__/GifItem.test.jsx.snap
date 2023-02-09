@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST: <GifItem /> Should make match with snapshot 1`] = `
+<div>
+  <img
+    alt="Dark Souls"
+    class="img"
+    src="https://example.com/"
+  />
+  <p>
+    Dark Souls
+  </p>
+</div>
+`;
