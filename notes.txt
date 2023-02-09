@@ -22,6 +22,10 @@ TEST STEPS (With Vite)
     Library (For testing React components)
 
         npm install --save-dev @testing-library/react
+        
+    For transform assets files
+    
+        npm install --save-dev identity-obj-proxy
 
 
 
@@ -71,8 +75,15 @@ TEST STEPS (With Vite)
 - 4) Create file "jest.config.cjs" in root project and add:
 
     module.exports = {
-        testEnvironment: 'jest-environment-jsdom',
-        setupFiles: ['./jest.setup.js'],
+          testEnvironment: 'jest-environment-jsdom',
+          setupFiles: ['./jest.setup.js'],
+          transform: {
+            '\\.[jt]sx?$': 'babel-jest',
+          },
+          moduleNameMapper: {
+            '\\.(css)$': 'identity-obj-proxy',
+            '\\.(jpg|jpeg|png|gif)$': 'identity-obj-proxy',
+          },
     };
 
 
