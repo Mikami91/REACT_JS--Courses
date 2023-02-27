@@ -18,6 +18,6 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <Father />
+  <MultiCustomHooks />
   // </React.StrictMode>
 );

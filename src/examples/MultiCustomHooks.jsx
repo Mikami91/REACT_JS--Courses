@@ -30,7 +30,7 @@ const MultiCustomHooks = () => {
               disable={counter <= 1}
             />
           }
-          btn2={<Button text='Nex Page' onClick={() => increment()} />}
+          btn2={<Button text='Next Page' onClick={() => increment()} />}
           page={counter}
         />
       </div>
