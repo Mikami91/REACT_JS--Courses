@@ -20,7 +20,9 @@ const Login = () => {
       <button className='btn btn-success' onClick={() => setUser(setData)}>
         Set Data
       </button>
-      <pre style={{ color: '#e57fb2' }}>{JSON.stringify(user, null, 3)}</pre>
+      <pre aria-label='pre' style={{ color: '#e57fb2' }}>
+        {JSON.stringify(user, null, 3)}
+      </pre>
     </div>
   );
 };

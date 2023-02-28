@@ -20,7 +20,9 @@ const Home = () => {
       <button className='btn btn-info' onClick={() => setUser(setData)}>
         Update Data
       </button>
-      <pre style={{ color: '#e57fb2' }}>{JSON.stringify(user, null, 3)}</pre>
+      <pre aria-label='pre' style={{ color: '#e57fb2' }}>
+        {JSON.stringify(user, null, 3)}
+      </pre>
     </div>
   );
 };
