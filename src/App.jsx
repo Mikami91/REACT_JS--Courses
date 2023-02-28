@@ -17,15 +17,26 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
-      <Header />
-      <InputSearch onAddCategory={onAddCategory} />
-      <div className='card'>
+    <>
+      <div
+        className='sticky-top'
+        style={{
+          backgroundColor: '#242424',
+          paddingTop: 20,
+          paddingBottom: 20,
+        }}
+      >
+        <Header />
+        <br />
+
+        <InputSearch onAddCategory={onAddCategory} />
+      </div>
+      <blockquote className='blockquote text-center'>
         {categories.map((i) => (
           <GifGrid key={i} category={i} />
         ))}
-      </div>
-    </div>
+      </blockquote>
+    </>
   );
 };
 

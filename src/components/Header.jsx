@@ -6,7 +6,9 @@ import '../App.css';
 const Header = () => {
   return (
     <>
-      <div>
+      <h4 id='mikami'>By Mikami</h4>
+      <h1>Gif App</h1>
+      {/* <div>
         <a href='https://vitejs.dev' target='_blank'>
           <img src='/vite.svg' className='logo' alt='Vite logo' />
         </a>
@@ -14,7 +16,7 @@ const Header = () => {
           <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
-      <h1>GIF APP</h1>
+      <h1>GIF APP</h1> */}
     </>
   );
 };

@@ -17,14 +17,38 @@ const InputSearch = ({ onAddCategory }) => {
     setValue('');
   };
 
+  const onSearch = () => {
+    if (value.trim().length < 1) return;
+
+    onAddCategory(value.trim());
+    setValue('');
+  };
+
   return (
     <form onSubmit={onSubmit} aria-label='form'>
-      <input
+      <div className='input-group mb-3'>
+        <input
+          type='text'
+          placeholder='Search gif'
+          value={value}
+          onChange={onInputChange}
+          className='form-control'
+        />
+        <button
+          className='btn btn-primary'
+          type='button'
+          id='button-search'
+          onClick={onSearch}
+        >
+          Search
+        </button>
+      </div>
+      {/* <input
         type='text'
         placeholder='Search gif'
         value={value}
         onChange={onInputChange}
-      />
+      /> */}
     </form>
   );
 };
