@@ -1,7 +1,10 @@
+// Components
+import { PageTitle } from '../../ui/components';
+
 const Home = () => {
   return (
     <>
-      <h1>Home Page</h1>
+      <PageTitle title='Home Page' />
     </>
   );
 };

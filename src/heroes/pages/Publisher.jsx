@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+// Components
+import { PageTitle } from '../../ui/components';
 // Hooks
 import { useScreen } from '../../ui/hooks';
 
@@ -7,9 +9,7 @@ const Heroes = () => {
 
   return (
     <>
-      <h1 className='animate__animated animate__fadeInLeft animate__faster'>
-        Heroes Page
-      </h1>
+      <PageTitle title='Publisher Page' />
 
       <div className='container text-center mt-4 mb-4'>
         <div
@@ -20,7 +20,7 @@ const Heroes = () => {
             <Link to='dc'>
               <img
                 style={{ width: isMobile ? '200px' : '' }}
-                src='/assets/dc.png'
+                src='/heroes/dc.png'
                 className='figure-img img-fluid animate__animated animate__rotateIn animate__faster'
                 alt='dc'
               />
@@ -30,7 +30,7 @@ const Heroes = () => {
             <Link to='marvel'>
               <img
                 style={{ width: isMobile ? '200px' : '' }}
-                src='/assets/marvel.png'
+                src='/heroes/marvel.png'
                 className='figure-img img-fluid animate__animated animate__rotateIn animate__faster'
                 alt='marvel'
               />

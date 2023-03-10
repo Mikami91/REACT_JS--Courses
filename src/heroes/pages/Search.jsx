@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
 // Components
 import { HeroResult } from '../components';
+import { PageTitle } from '../../ui/components';
 // Helpers
 import { getHeroByName } from '../helpers';
 // Hooks
@@ -25,9 +26,8 @@ const Search = () => {
 
   return (
     <>
-      <h1 className='animate__animated animate__fadeInLeft animate__faster'>
-        Search Page
-      </h1>
+      <PageTitle title='Search Page' />
+
       <div className='container mt-4'>
         <div className='row'>
           <div className='col-xs-12 col-md-4'>

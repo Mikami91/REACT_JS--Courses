@@ -1,14 +1,7 @@
 import { Link } from 'react-router-dom';
 
-const HeroDetail = ({
-  id,
-  superhero,
-  // characters,
-  // alter_ego,
-  // first_appearance,
-  // publisher,
-}) => {
-  const imagePath = `/assets/${id}.jpg`;
+const HeroDetail = ({ id, superhero }) => {
+  const imagePath = `/heroes/${id}.jpg`;
 
   return (
     <div className='container mt-4 mb-4'>
@@ -20,13 +13,14 @@ const HeroDetail = ({
             alt={id}
           />
         </div>
-        <div className='col-md-8 text-center animate__animated animate__fadeInRight animate__faster'>
+        <div className='col-md-8 mb-3 text-center animate__animated animate__fadeInRight animate__faster'>
           <div className='card'>
             <div className='card-header text-center'>
               <h5 className='card-title'>{superhero}</h5>
-            </div>
-            <div className='card-footer'>
-              <Link to={`../hero/${id}`} className='btn btn-outline-primary'>
+              <Link
+                to={`../hero/${id}`}
+                className='btn btn-outline-primary form-control mt-1 mb-2'
+              >
                 Show More
               </Link>
             </div>

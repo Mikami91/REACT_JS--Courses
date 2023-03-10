@@ -1,17 +1,21 @@
+import { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
+// Context
+import { AuthContext } from '../auth';
 // Pages
-import { Home, Login } from '../auth';
 import { Error } from '../ui';
 // Routers
-import HeroesRouter from '../heroes/routers/HeroesRouter';
+import PrivateRouter from './PrivateRouter';
+import PublicRouter from './PublicRouter';
 
 const AppRouter = () => {
+  const { logged } = useContext(AuthContext);
+
   return (
     <>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='home' element={<Home />} />
-        <Route path='heroes/*' element={<HeroesRouter />} />
+        <Route path='/*' element={<PublicRouter logged={logged} />} />
+        <Route path='publisher/*' element={<PrivateRouter logged={logged} />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </>

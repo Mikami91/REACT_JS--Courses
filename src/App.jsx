@@ -2,13 +2,17 @@
 import { Footer, NavBar, Title } from '../src/ui';
 // Routers
 import AppRouter from '../src/routers/AppRouter';
+// Providers
+import { AuthProvider } from './auth';
 
 const App = () => {
   return (
     <>
-      <Title text='Heroes App' />
-      <AppRouter />
-      <Footer />
+      <AuthProvider>
+        <Title text='Heroes App' />
+        <AppRouter />
+        <Footer />
+      </AuthProvider>
     </>
   );
 };

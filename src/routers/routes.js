@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/*',
-    name: 'heroes',
+    name: 'publisher',
     component: HeroesRouter,
   },
 ];

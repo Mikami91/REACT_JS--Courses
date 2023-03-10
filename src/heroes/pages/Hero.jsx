@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-
+// Components
+import { PageTitle } from '../../ui/components';
 // Helpers
 import { getHeroById } from '../helpers';
 
@@ -9,7 +10,7 @@ const Hero = () => {
 
   const hero = useMemo(() => getHeroById(id), [id]);
 
-  const imagePath = `/assets/${hero.id}.jpg`;
+  const imagePath = `/heroes/${hero.id}.jpg`;
 
   if (!hero) {
     return <Navigate to='/heroes' />;
@@ -17,9 +18,8 @@ const Hero = () => {
 
   return (
     <>
-      <h1 className='animate__animated animate__fadeInLeft animate__faster'>
-        Hero Page
-      </h1>
+      <PageTitle title='Hero Page' />
+
       <div className='container mt-4 mb-5'>
         <div className='row align-items-center'>
           <div className='col-md-5'>
@@ -32,7 +32,7 @@ const Hero = () => {
           <div className='col-md-7 animate__animated animate__fadeInUp animate__faster'>
             <div className='card'>
               <div className='card-header text-center'>
-                <h5 className='card-title'>{hero.superhero}</h5>
+                <h2 className='card-title'>{hero.superhero}</h2>
                 <p className='card-text'>{hero.characters}</p>
               </div>
               <div className='card-body'>
@@ -44,7 +44,7 @@ const Hero = () => {
               </div>
 
               <div className='card-footer text-center'>
-                <Link to={-1} className='btn btn-outline-primary'>
+                <Link to={-1} className='btn btn-outline-primary form-control'>
                   Go Back
                 </Link>
               </div>

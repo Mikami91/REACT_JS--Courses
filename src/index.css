@@ -17,14 +17,17 @@ body {
 
 #user {
   color: #e57fb2;
+  text-transform: capitalize;
 }
 
 #header {
   background-color: #242424;
-  height: 220px;
+  height: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 #footer {
   background-color: #242424;
-  height: 50px;
+  height: 3.5rem;
 }

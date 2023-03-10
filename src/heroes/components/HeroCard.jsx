@@ -5,7 +5,7 @@ import { useScreen } from '../../ui/hooks';
 const HeroCard = ({ id, superhero }) => {
   const { isMobile } = useScreen();
 
-  const imagePath = `/assets/${id}.jpg`;
+  const imagePath = `/heroes/${id}.jpg`;
 
   return (
     <div className='col col-sm-6 col-md-4 col-lg-3 text-center'>
@@ -21,7 +21,7 @@ const HeroCard = ({ id, superhero }) => {
           alt={id}
         />
 
-        <h5
+        <h6
           className='card-title mt-3 animate__animated animate__slideInDown animate__faster'
           style={{
             textOverflow: 'ellipsis',
@@ -30,9 +30,12 @@ const HeroCard = ({ id, superhero }) => {
           }}
         >
           {superhero}
-        </h5>
+        </h6>
         <div className='card-footer'>
-          <Link to={`../hero/${id}`} className='btn btn-outline-primary'>
+          <Link
+            to={`../hero/${id}`}
+            className='btn btn-outline-primary form-control'
+          >
             More
           </Link>
         </div>
