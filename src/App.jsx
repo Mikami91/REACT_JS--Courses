@@ -1,5 +1,5 @@
 // Components
-import { Footer, NavBar, Title } from '../src/ui';
+import { Footer, Title } from '../src/ui';
 // Routers
 import AppRouter from '../src/routers/AppRouter';
 // Providers

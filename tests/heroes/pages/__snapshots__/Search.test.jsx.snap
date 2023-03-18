@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST: <Search /> Should show with correct components 1`] = `undefined`;

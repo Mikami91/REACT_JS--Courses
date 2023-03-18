@@ -1,10 +1,20 @@
+import { useNavigate } from 'react-router-dom';
+// Components
+import PageTitle from '../components/PageTitle';
+
 const Error = () => {
-    return (
-      <>
-        <h1>Error Page</h1>
-      </>
-    );
-  };
-  
-  export default Error;
-  
+  const navigate = useNavigate();
+
+  const goBack = () => navigate(-1);
+
+  return (
+    <>
+      <PageTitle title='Error Page' />
+      <button className='btn btn-outline-dark mt-2' onClick={goBack}>
+        Go Back
+      </button>
+    </>
+  );
+};
+
+export default Error;

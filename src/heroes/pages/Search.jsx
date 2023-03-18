@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import queryString from 'query-string';
 // Components
 import { HeroResult } from '../components';
 import { PageTitle } from '../../ui/components';
@@ -12,10 +11,11 @@ const Search = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { q = '' } = queryString.parse(location.search);
-  const heroes = getHeroByName(q);
+  const query = location.search.slice(3) ?? '';
 
-  const { searchText, onInputChange } = useForm({ searchText: q });
+  const heroes = getHeroByName(query);
+
+  const { searchText, onInputChange } = useForm({ searchText: query });
 
   const onSearch = (e) => {
     e.preventDefault();
@@ -56,7 +56,7 @@ const Search = () => {
           </div>
 
           <div className='col-xs-12 col-md-8'>
-            {q != '' && (
+            {query != '' && (
               <>
                 {heroes.length > 0 ? (
                   <div className='alert alert-success text-center animate__animated animate__zoomIn animate__faster'>
@@ -64,7 +64,7 @@ const Search = () => {
                   </div>
                 ) : (
                   <div className='alert alert-danger text-center animate__animated animate__zoomIn animate__faster'>
-                    Hero <b>{q}</b> no found
+                    Hero <b>{query}</b> no found
                   </div>
                 )}
                 {heroes.map((i) => (
