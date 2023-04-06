@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 1rem 2rem 2rem 2rem;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+#mikami {
+  color: #eb642f;
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  font-style: italic;
+  font-size: large;
+}
+
+#user {
+  color: #e57fb2;
+}
+
+#title {
+  text-align: center;
+}
+
+#header {
+  background-color: #242424;
+  height: 220px;
+}
+
+#footer {
+  background-color: #242424;
+  text-align: center;
+  height: 50px;
+}
+
+.box-shadow {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
