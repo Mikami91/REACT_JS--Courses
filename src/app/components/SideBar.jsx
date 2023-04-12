@@ -13,8 +13,11 @@ import {
   Typography,
 } from '@mui/material';
 import { TurnedInNot } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
 
 const SideBar = ({ drawerWidth }) => {
+  const { displayName } = useSelector((state) => state.auth);
+
   return (
     <Box
       component='nav'
@@ -34,7 +37,7 @@ const SideBar = ({ drawerWidth }) => {
       >
         <Toolbar color='yellow'>
           <Typography variant='h6' noWrap component='div'>
-            Mikami Teru
+            {displayName}
           </Typography>
         </Toolbar>
         <Divider />

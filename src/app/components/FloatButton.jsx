@@ -13,6 +13,7 @@ const FloatButton = () => {
         right: 50,
         bottom: 50,
       }}
+      className='animate__animated animate__fadeInUp animate__faster'
     >
       <AddOutlined sx={{ fontSize: 30 }} />
     </IconButton>
